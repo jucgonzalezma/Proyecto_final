@@ -1,0 +1,15 @@
+# ***ENER.service***
+[Unit]
+Description=Servicio que se asegura de subir datos a Adafruit
+Requires=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/proyecto_final/proyecto_final.py
+Restart=on-failure
+RestartSec=60
+
+[Install]
+WantedBy=multi-user.target
+
